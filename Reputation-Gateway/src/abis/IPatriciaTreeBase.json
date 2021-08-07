@@ -1,0 +1,744 @@
+{
+  "contractName": "IPatriciaTreeBase",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "getRootHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rootHash",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRootEdge",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "node",
+              "type": "bytes32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "data",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "length",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Data.Label",
+              "name": "label",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Data.Edge",
+          "name": "e",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getNode",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "node",
+                  "type": "bytes32"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes32",
+                      "name": "data",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "length",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct Data.Label",
+                  "name": "label",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct Data.Edge[2]",
+              "name": "children",
+              "type": "tuple[2]"
+            }
+          ],
+          "internalType": "struct Data.Node",
+          "name": "n",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"hash\",\"type\":\"bytes32\"}],\"name\":\"getNode\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"data\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"internalType\":\"struct Data.Label\",\"name\":\"label\",\"type\":\"tuple\"}],\"internalType\":\"struct Data.Edge[2]\",\"name\":\"children\",\"type\":\"tuple[2]\"}],\"internalType\":\"struct Data.Node\",\"name\":\"n\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRootEdge\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"data\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"internalType\":\"struct Data.Label\",\"name\":\"label\",\"type\":\"tuple\"}],\"internalType\":\"struct Data.Edge\",\"name\":\"e\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRootHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getNode(bytes32)\":{\"params\":{\"hash\":\"The `keccak256` hash of the actual key\"},\"returns\":{\"n\":\"`Data.Node` for key `hash`\"}},\"getRootEdge()\":{\"returns\":{\"e\":\"The root `Data.Edge`\"}},\"getRootHash()\":{\"details\":\"This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`\",\"returns\":{\"rootHash\":\"The `bytes32` hash value\"}}},\"title\":\"Interface for Patricia trees\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getNode(bytes32)\":{\"notice\":\"Get the node with the given key\"},\"getRootEdge()\":{\"notice\":\"Get the root edge\"},\"getRootHash()\":{\"notice\":\"Get the root hash\"}},\"notice\":\"More info at: https://github.com/chriseth/patricia-trie\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol\":\"IPatriciaTreeBase\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Bits.sol\":{\"keccak256\":\"0x6a8007843ccff757370601e4d1e4cfcf30b136e3f45d51de4bf8943a96fcc18d\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://582c0736f0c07cb0a851f961ad0f813c3c89afb89258d13a320c78e38671bb68\",\"dweb:/ipfs/QmXQ8AXrkhS8vS491ux27sUP2xc9VkpjpiV5CqzXetB6V2\"]},\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol\":{\"keccak256\":\"0xc4e8cd3d033ba5c3347e563455c336a4825ebc0261dab13c6cc9c010c92b08a6\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://6f540857bb7cb0ca844a3d1d8185f266b27a7faf7d6a3558bb902765741adff3\",\"dweb:/ipfs/QmR4tVMhTWGsHihpzYsNv3shNq1PvPeEVxWZCX4xjXKAy8\"]},\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol\":{\"keccak256\":\"0x36316d2bd0a18c0c0187bf8b5794310785e77cfe4eb5a86ef8687a70485ef747\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://6e03f9715a9e790177b96135aad2d365dc28e99c22c7f542cfae41d6916c8022\",\"dweb:/ipfs/QmUzRU83zhqxf8MeYHcJ4RZRVsSxR8y1yh89KfChAv87Zd\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: ISC\r\n\r\npragma solidity 0.8.1;\r\n\r\nimport {Data} from \"./Data.sol\";\r\n\r\n\r\n/// @title Interface for Patricia trees\r\n/// @notice More info at: https://github.com/chriseth/patricia-trie\r\ninterface IPatriciaTreeBase {\r\n\r\n  /// @notice Get the root hash\r\n  /// @dev This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`\r\n  /// @return rootHash The `bytes32` hash value\r\n  function getRootHash() external view returns (bytes32 rootHash);\r\n\r\n  /// @notice Get the root edge\r\n  /// @return e The root `Data.Edge`\r\n  function getRootEdge() external view returns (Data.Edge memory e);\r\n\r\n  /// @notice Get the node with the given key\r\n  /// @param hash The `keccak256` hash of the actual key\r\n  /// @return n `Data.Node` for key `hash`\r\n  function getNode(bytes32 hash) external view returns (Data.Node memory n);\r\n}",
+  "sourcePath": "D:\\Ethereum\\Reputation-Gateway\\src\\contracts\\patricia tree\\IPatriciaTreeBase.sol",
+  "ast": {
+    "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol",
+    "exportedSymbols": {
+      "Data": [
+        1881
+      ],
+      "IPatriciaTreeBase": [
+        1952
+      ]
+    },
+    "id": 1953,
+    "license": "ISC",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1926,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:7"
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol",
+        "file": "./Data.sol",
+        "id": 1928,
+        "nodeType": "ImportDirective",
+        "scope": 1953,
+        "sourceUnit": 1882,
+        "src": "61:32:7",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1927,
+              "name": "Data",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "69:4:7",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1929,
+          "nodeType": "StructuredDocumentation",
+          "src": "99:110:7",
+          "text": "@title Interface for Patricia trees\n @notice More info at: https://github.com/chriseth/patricia-trie"
+        },
+        "fullyImplemented": false,
+        "id": 1952,
+        "linearizedBaseContracts": [
+          1952
+        ],
+        "name": "IPatriciaTreeBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1930,
+              "nodeType": "StructuredDocumentation",
+              "src": "244:197:7",
+              "text": "@notice Get the root hash\n @dev This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`\n @return rootHash The `bytes32` hash value"
+            },
+            "functionSelector": "80759f1f",
+            "id": 1935,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRootHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1931,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "465:2:7"
+            },
+            "returnParameters": {
+              "id": 1934,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1933,
+                  "mutability": "mutable",
+                  "name": "rootHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1935,
+                  "src": "491:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1932,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:18:7"
+            },
+            "scope": 1952,
+            "src": "445:64:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1936,
+              "nodeType": "StructuredDocumentation",
+              "src": "515:67:7",
+              "text": "@notice Get the root edge\n @return e The root `Data.Edge`"
+            },
+            "functionSelector": "a43914da",
+            "id": 1942,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRootEdge",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1937,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "606:2:7"
+            },
+            "returnParameters": {
+              "id": 1941,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1940,
+                  "mutability": "mutable",
+                  "name": "e",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1942,
+                  "src": "632:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Edge_$1260_memory_ptr",
+                    "typeString": "struct Data.Edge"
+                  },
+                  "typeName": {
+                    "id": 1939,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1938,
+                      "name": "Data.Edge",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1260,
+                      "src": "632:9:7"
+                    },
+                    "referencedDeclaration": 1260,
+                    "src": "632:9:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Edge_$1260_storage_ptr",
+                      "typeString": "struct Data.Edge"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "631:20:7"
+            },
+            "scope": 1952,
+            "src": "586:66:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1943,
+              "nodeType": "StructuredDocumentation",
+              "src": "658:145:7",
+              "text": "@notice Get the node with the given key\n @param hash The `keccak256` hash of the actual key\n @return n `Data.Node` for key `hash`"
+            },
+            "functionSelector": "50c946fe",
+            "id": 1951,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1946,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1945,
+                  "mutability": "mutable",
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1951,
+                  "src": "824:12:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1944,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "824:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "823:14:7"
+            },
+            "returnParameters": {
+              "id": 1950,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1949,
+                  "mutability": "mutable",
+                  "name": "n",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1951,
+                  "src": "861:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Node_$1266_memory_ptr",
+                    "typeString": "struct Data.Node"
+                  },
+                  "typeName": {
+                    "id": 1948,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1947,
+                      "name": "Data.Node",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1266,
+                      "src": "861:9:7"
+                    },
+                    "referencedDeclaration": 1266,
+                    "src": "861:9:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Node_$1266_storage_ptr",
+                      "typeString": "struct Data.Node"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "860:20:7"
+            },
+            "scope": 1952,
+            "src": "807:74:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1953,
+        "src": "209:675:7"
+      }
+    ],
+    "src": "35:849:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol",
+    "exportedSymbols": {
+      "Data": [
+        1881
+      ],
+      "IPatriciaTreeBase": [
+        1952
+      ]
+    },
+    "id": 1953,
+    "license": "ISC",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1926,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:7"
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol",
+        "file": "./Data.sol",
+        "id": 1928,
+        "nodeType": "ImportDirective",
+        "scope": 1953,
+        "sourceUnit": 1882,
+        "src": "61:32:7",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1927,
+              "name": "Data",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "69:4:7",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1929,
+          "nodeType": "StructuredDocumentation",
+          "src": "99:110:7",
+          "text": "@title Interface for Patricia trees\n @notice More info at: https://github.com/chriseth/patricia-trie"
+        },
+        "fullyImplemented": false,
+        "id": 1952,
+        "linearizedBaseContracts": [
+          1952
+        ],
+        "name": "IPatriciaTreeBase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1930,
+              "nodeType": "StructuredDocumentation",
+              "src": "244:197:7",
+              "text": "@notice Get the root hash\n @dev This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`\n @return rootHash The `bytes32` hash value"
+            },
+            "functionSelector": "80759f1f",
+            "id": 1935,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRootHash",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1931,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "465:2:7"
+            },
+            "returnParameters": {
+              "id": 1934,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1933,
+                  "mutability": "mutable",
+                  "name": "rootHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1935,
+                  "src": "491:16:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1932,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "491:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "490:18:7"
+            },
+            "scope": 1952,
+            "src": "445:64:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1936,
+              "nodeType": "StructuredDocumentation",
+              "src": "515:67:7",
+              "text": "@notice Get the root edge\n @return e The root `Data.Edge`"
+            },
+            "functionSelector": "a43914da",
+            "id": 1942,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getRootEdge",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1937,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "606:2:7"
+            },
+            "returnParameters": {
+              "id": 1941,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1940,
+                  "mutability": "mutable",
+                  "name": "e",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1942,
+                  "src": "632:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Edge_$1260_memory_ptr",
+                    "typeString": "struct Data.Edge"
+                  },
+                  "typeName": {
+                    "id": 1939,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1938,
+                      "name": "Data.Edge",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1260,
+                      "src": "632:9:7"
+                    },
+                    "referencedDeclaration": 1260,
+                    "src": "632:9:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Edge_$1260_storage_ptr",
+                      "typeString": "struct Data.Edge"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "631:20:7"
+            },
+            "scope": 1952,
+            "src": "586:66:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1943,
+              "nodeType": "StructuredDocumentation",
+              "src": "658:145:7",
+              "text": "@notice Get the node with the given key\n @param hash The `keccak256` hash of the actual key\n @return n `Data.Node` for key `hash`"
+            },
+            "functionSelector": "50c946fe",
+            "id": 1951,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNode",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1946,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1945,
+                  "mutability": "mutable",
+                  "name": "hash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1951,
+                  "src": "824:12:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1944,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "824:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "823:14:7"
+            },
+            "returnParameters": {
+              "id": 1950,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1949,
+                  "mutability": "mutable",
+                  "name": "n",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1951,
+                  "src": "861:18:7",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_Node_$1266_memory_ptr",
+                    "typeString": "struct Data.Node"
+                  },
+                  "typeName": {
+                    "id": 1948,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1947,
+                      "name": "Data.Node",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1266,
+                      "src": "861:9:7"
+                    },
+                    "referencedDeclaration": 1266,
+                    "src": "861:9:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Node_$1266_storage_ptr",
+                      "typeString": "struct Data.Node"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "860:20:7"
+            },
+            "scope": 1952,
+            "src": "807:74:7",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1953,
+        "src": "209:675:7"
+      }
+    ],
+    "src": "35:849:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.1+commit.df193b15.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-07-13T08:50:07.344Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getNode(bytes32)": {
+        "params": {
+          "hash": "The `keccak256` hash of the actual key"
+        },
+        "returns": {
+          "n": "`Data.Node` for key `hash`"
+        }
+      },
+      "getRootEdge()": {
+        "returns": {
+          "e": "The root `Data.Edge`"
+        }
+      },
+      "getRootHash()": {
+        "details": "This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`",
+        "returns": {
+          "rootHash": "The `bytes32` hash value"
+        }
+      }
+    },
+    "title": "Interface for Patricia trees",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getNode(bytes32)": {
+        "notice": "Get the node with the given key"
+      },
+      "getRootEdge()": {
+        "notice": "Get the root edge"
+      },
+      "getRootHash()": {
+        "notice": "Get the root hash"
+      }
+    },
+    "notice": "More info at: https://github.com/chriseth/patricia-trie",
+    "version": 1
+  }
+}

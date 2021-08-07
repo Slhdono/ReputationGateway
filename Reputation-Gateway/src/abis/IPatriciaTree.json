@@ -1,0 +1,1222 @@
+{
+  "contractName": "IPatriciaTree",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "hash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getNode",
+      "outputs": [
+        {
+          "components": [
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "node",
+                  "type": "bytes32"
+                },
+                {
+                  "components": [
+                    {
+                      "internalType": "bytes32",
+                      "name": "data",
+                      "type": "bytes32"
+                    },
+                    {
+                      "internalType": "uint256",
+                      "name": "length",
+                      "type": "uint256"
+                    }
+                  ],
+                  "internalType": "struct Data.Label",
+                  "name": "label",
+                  "type": "tuple"
+                }
+              ],
+              "internalType": "struct Data.Edge[2]",
+              "name": "children",
+              "type": "tuple[2]"
+            }
+          ],
+          "internalType": "struct Data.Node",
+          "name": "n",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRootEdge",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "node",
+              "type": "bytes32"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bytes32",
+                  "name": "data",
+                  "type": "bytes32"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "length",
+                  "type": "uint256"
+                }
+              ],
+              "internalType": "struct Data.Label",
+              "name": "label",
+              "type": "tuple"
+            }
+          ],
+          "internalType": "struct Data.Edge",
+          "name": "e",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getRootHash",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rootHash",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "key",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "value",
+          "type": "bytes"
+        }
+      ],
+      "name": "insert",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "key",
+          "type": "bytes"
+        }
+      ],
+      "name": "getProof",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "branchMask",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "_siblings",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "key",
+          "type": "bytes"
+        },
+        {
+          "internalType": "bytes",
+          "name": "value",
+          "type": "bytes"
+        },
+        {
+          "internalType": "uint256",
+          "name": "branchMask",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "siblings",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "getImpliedRoot",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "rootHash",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"key\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"value\",\"type\":\"bytes\"},{\"internalType\":\"uint256\",\"name\":\"branchMask\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"siblings\",\"type\":\"bytes32[]\"}],\"name\":\"getImpliedRoot\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"hash\",\"type\":\"bytes32\"}],\"name\":\"getNode\",\"outputs\":[{\"components\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"data\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"internalType\":\"struct Data.Label\",\"name\":\"label\",\"type\":\"tuple\"}],\"internalType\":\"struct Data.Edge[2]\",\"name\":\"children\",\"type\":\"tuple[2]\"}],\"internalType\":\"struct Data.Node\",\"name\":\"n\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"key\",\"type\":\"bytes\"}],\"name\":\"getProof\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"branchMask\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"_siblings\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRootEdge\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"node\",\"type\":\"bytes32\"},{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"data\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"length\",\"type\":\"uint256\"}],\"internalType\":\"struct Data.Label\",\"name\":\"label\",\"type\":\"tuple\"}],\"internalType\":\"struct Data.Edge\",\"name\":\"e\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getRootHash\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"rootHash\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"key\",\"type\":\"bytes\"},{\"internalType\":\"bytes\",\"name\":\"value\",\"type\":\"bytes\"}],\"name\":\"insert\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getImpliedRoot(bytes,bytes,uint256,bytes32[])\":{\"returns\":{\"rootHash\":\"The calculated hash\"}},\"getNode(bytes32)\":{\"params\":{\"hash\":\"The `keccak256` hash of the actual key\"},\"returns\":{\"n\":\"`Data.Node` for key `hash`\"}},\"getProof(bytes)\":{\"returns\":{\"_siblings\":\"Hashes of sibling edges\",\"branchMask\":\"Bitmask with high bits at the positions in the `key` where we have branch nodes (bit in key denotes direction)\"}},\"getRootEdge()\":{\"returns\":{\"e\":\"The root `Data.Edge`\"}},\"getRootHash()\":{\"details\":\"This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`\",\"returns\":{\"rootHash\":\"The `bytes32` hash value\"}}},\"title\":\"Interface for Patricia trees\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getImpliedRoot(bytes,bytes,uint256,bytes32[])\":{\"notice\":\"Calculates and returns a root hash for the `key`, `value`, `branchMask` and `siblings`\"},\"getNode(bytes32)\":{\"notice\":\"Get the node with the given key\"},\"getProof(bytes)\":{\"notice\":\"Returns the Merkle-proof for the given `key`\"},\"getRootEdge()\":{\"notice\":\"Get the root edge\"},\"getRootHash()\":{\"notice\":\"Get the root hash\"},\"insert(bytes,bytes)\":{\"notice\":\"Insert the `key`/`value`in the appropriate place in the tree\"}},\"notice\":\"More info at: https://github.com/chriseth/patricia-trie\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTree.sol\":\"IPatriciaTree\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Bits.sol\":{\"keccak256\":\"0x6a8007843ccff757370601e4d1e4cfcf30b136e3f45d51de4bf8943a96fcc18d\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://582c0736f0c07cb0a851f961ad0f813c3c89afb89258d13a320c78e38671bb68\",\"dweb:/ipfs/QmXQ8AXrkhS8vS491ux27sUP2xc9VkpjpiV5CqzXetB6V2\"]},\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol\":{\"keccak256\":\"0xc4e8cd3d033ba5c3347e563455c336a4825ebc0261dab13c6cc9c010c92b08a6\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://6f540857bb7cb0ca844a3d1d8185f266b27a7faf7d6a3558bb902765741adff3\",\"dweb:/ipfs/QmR4tVMhTWGsHihpzYsNv3shNq1PvPeEVxWZCX4xjXKAy8\"]},\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTree.sol\":{\"keccak256\":\"0x37da625f00f85b4cb9c313da237654ba6abb03151c010bfea466f54a71285845\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://513690079bd319efb9ce46b1c7738dbf4aec520b33f68065b134e2f0d91af044\",\"dweb:/ipfs/QmPPy2hD2WQLrTXNr2jx7XgsWBPb1PXHAUEo8h721Xc6R3\"]},\"/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol\":{\"keccak256\":\"0x36316d2bd0a18c0c0187bf8b5794310785e77cfe4eb5a86ef8687a70485ef747\",\"license\":\"ISC\",\"urls\":[\"bzz-raw://6e03f9715a9e790177b96135aad2d365dc28e99c22c7f542cfae41d6916c8022\",\"dweb:/ipfs/QmUzRU83zhqxf8MeYHcJ4RZRVsSxR8y1yh89KfChAv87Zd\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: ISC\r\n\r\npragma solidity 0.8.1;\r\n\r\nimport {Data} from \"./Data.sol\";\r\nimport \"./IPatriciaTreeBase.sol\";\r\n\r\n\r\n/// @title Interface for Patricia trees\r\n/// @notice More info at: https://github.com/chriseth/patricia-trie\r\ninterface IPatriciaTree is IPatriciaTreeBase {\r\n\r\n  /// @notice Insert the `key`/`value`in the appropriate place in the tree\r\n  function insert(bytes memory key, bytes memory value) external;\r\n\r\n  /// @notice Returns the Merkle-proof for the given `key`\r\n  /// @return branchMask Bitmask with high bits at the positions in the `key` where we have branch nodes (bit in key denotes direction)\r\n  /// @return _siblings Hashes of sibling edges\r\n  function getProof(bytes memory key) external view returns (uint branchMask, bytes32[] memory _siblings);\r\n\r\n  /// @notice Calculates and returns a root hash for the `key`, `value`, `branchMask` and `siblings`\r\n  /// @return rootHash The calculated hash\r\n  function getImpliedRoot(bytes memory key, bytes memory value, uint256 branchMask, bytes32[] memory siblings)\r\n    external pure returns (bytes32 rootHash);\r\n\r\n}",
+  "sourcePath": "D:\\Ethereum\\Reputation-Gateway\\src\\contracts\\patricia tree\\IPatriciaTree.sol",
+  "ast": {
+    "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTree.sol",
+    "exportedSymbols": {
+      "Data": [
+        1881
+      ],
+      "IPatriciaTree": [
+        1924
+      ],
+      "IPatriciaTreeBase": [
+        1952
+      ]
+    },
+    "id": 1925,
+    "license": "ISC",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1883,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:6"
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol",
+        "file": "./Data.sol",
+        "id": 1885,
+        "nodeType": "ImportDirective",
+        "scope": 1925,
+        "sourceUnit": 1882,
+        "src": "61:32:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1884,
+              "name": "Data",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "69:4:6",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol",
+        "file": "./IPatriciaTreeBase.sol",
+        "id": 1886,
+        "nodeType": "ImportDirective",
+        "scope": 1925,
+        "sourceUnit": 1953,
+        "src": "95:33:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1888,
+              "name": "IPatriciaTreeBase",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1952,
+              "src": "271:17:6"
+            },
+            "id": 1889,
+            "nodeType": "InheritanceSpecifier",
+            "src": "271:17:6"
+          }
+        ],
+        "contractDependencies": [
+          1952
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1887,
+          "nodeType": "StructuredDocumentation",
+          "src": "134:110:6",
+          "text": "@title Interface for Patricia trees\n @notice More info at: https://github.com/chriseth/patricia-trie"
+        },
+        "fullyImplemented": false,
+        "id": 1924,
+        "linearizedBaseContracts": [
+          1924,
+          1952
+        ],
+        "name": "IPatriciaTree",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1890,
+              "nodeType": "StructuredDocumentation",
+              "src": "296:72:6",
+              "text": "@notice Insert the `key`/`value`in the appropriate place in the tree"
+            },
+            "functionSelector": "20ba5b60",
+            "id": 1897,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1895,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1892,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1897,
+                  "src": "388:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1891,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1894,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1897,
+                  "src": "406:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1893,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "387:38:6"
+            },
+            "returnParameters": {
+              "id": 1896,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "434:0:6"
+            },
+            "scope": 1924,
+            "src": "372:63:6",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1898,
+              "nodeType": "StructuredDocumentation",
+              "src": "441:242:6",
+              "text": "@notice Returns the Merkle-proof for the given `key`\n @return branchMask Bitmask with high bits at the positions in the `key` where we have branch nodes (bit in key denotes direction)\n @return _siblings Hashes of sibling edges"
+            },
+            "functionSelector": "693ac4fb",
+            "id": 1908,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getProof",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1900,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "705:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1899,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "704:18:6"
+            },
+            "returnParameters": {
+              "id": 1907,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1903,
+                  "mutability": "mutable",
+                  "name": "branchMask",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "746:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1902,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1906,
+                  "mutability": "mutable",
+                  "name": "_siblings",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "763:26:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1904,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "763:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 1905,
+                    "nodeType": "ArrayTypeName",
+                    "src": "763:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:45:6"
+            },
+            "scope": 1924,
+            "src": "687:104:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1909,
+              "nodeType": "StructuredDocumentation",
+              "src": "797:142:6",
+              "text": "@notice Calculates and returns a root hash for the `key`, `value`, `branchMask` and `siblings`\n @return rootHash The calculated hash"
+            },
+            "functionSelector": "7f8b9478",
+            "id": 1923,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImpliedRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1919,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1911,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "967:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1910,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "967:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1913,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "985:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1912,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1915,
+                  "mutability": "mutable",
+                  "name": "branchMask",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1005:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1914,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1005:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1918,
+                  "mutability": "mutable",
+                  "name": "siblings",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1025:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1916,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1025:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 1917,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1025:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "966:85:6"
+            },
+            "returnParameters": {
+              "id": 1922,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1921,
+                  "mutability": "mutable",
+                  "name": "rootHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1080:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1920,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1080:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1079:18:6"
+            },
+            "scope": 1924,
+            "src": "943:155:6",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1925,
+        "src": "244:859:6"
+      }
+    ],
+    "src": "35:1068:6"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTree.sol",
+    "exportedSymbols": {
+      "Data": [
+        1881
+      ],
+      "IPatriciaTree": [
+        1924
+      ],
+      "IPatriciaTreeBase": [
+        1952
+      ]
+    },
+    "id": 1925,
+    "license": "ISC",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1883,
+        "literals": [
+          "solidity",
+          "0.8",
+          ".1"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "35:22:6"
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/Data.sol",
+        "file": "./Data.sol",
+        "id": 1885,
+        "nodeType": "ImportDirective",
+        "scope": 1925,
+        "sourceUnit": 1882,
+        "src": "61:32:6",
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1884,
+              "name": "Data",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "69:4:6",
+              "typeDescriptions": {}
+            }
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/D/Ethereum/Reputation-Gateway/src/contracts/patricia tree/IPatriciaTreeBase.sol",
+        "file": "./IPatriciaTreeBase.sol",
+        "id": 1886,
+        "nodeType": "ImportDirective",
+        "scope": 1925,
+        "sourceUnit": 1953,
+        "src": "95:33:6",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 1888,
+              "name": "IPatriciaTreeBase",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 1952,
+              "src": "271:17:6"
+            },
+            "id": 1889,
+            "nodeType": "InheritanceSpecifier",
+            "src": "271:17:6"
+          }
+        ],
+        "contractDependencies": [
+          1952
+        ],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1887,
+          "nodeType": "StructuredDocumentation",
+          "src": "134:110:6",
+          "text": "@title Interface for Patricia trees\n @notice More info at: https://github.com/chriseth/patricia-trie"
+        },
+        "fullyImplemented": false,
+        "id": 1924,
+        "linearizedBaseContracts": [
+          1924,
+          1952
+        ],
+        "name": "IPatriciaTree",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "documentation": {
+              "id": 1890,
+              "nodeType": "StructuredDocumentation",
+              "src": "296:72:6",
+              "text": "@notice Insert the `key`/`value`in the appropriate place in the tree"
+            },
+            "functionSelector": "20ba5b60",
+            "id": 1897,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "insert",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1895,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1892,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1897,
+                  "src": "388:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1891,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "388:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1894,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1897,
+                  "src": "406:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1893,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "406:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "387:38:6"
+            },
+            "returnParameters": {
+              "id": 1896,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "434:0:6"
+            },
+            "scope": 1924,
+            "src": "372:63:6",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1898,
+              "nodeType": "StructuredDocumentation",
+              "src": "441:242:6",
+              "text": "@notice Returns the Merkle-proof for the given `key`\n @return branchMask Bitmask with high bits at the positions in the `key` where we have branch nodes (bit in key denotes direction)\n @return _siblings Hashes of sibling edges"
+            },
+            "functionSelector": "693ac4fb",
+            "id": 1908,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getProof",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1901,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1900,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "705:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1899,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "705:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "704:18:6"
+            },
+            "returnParameters": {
+              "id": 1907,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1903,
+                  "mutability": "mutable",
+                  "name": "branchMask",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "746:15:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1902,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "746:4:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1906,
+                  "mutability": "mutable",
+                  "name": "_siblings",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1908,
+                  "src": "763:26:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1904,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "763:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 1905,
+                    "nodeType": "ArrayTypeName",
+                    "src": "763:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "745:45:6"
+            },
+            "scope": 1924,
+            "src": "687:104:6",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "documentation": {
+              "id": 1909,
+              "nodeType": "StructuredDocumentation",
+              "src": "797:142:6",
+              "text": "@notice Calculates and returns a root hash for the `key`, `value`, `branchMask` and `siblings`\n @return rootHash The calculated hash"
+            },
+            "functionSelector": "7f8b9478",
+            "id": 1923,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getImpliedRoot",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 1919,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1911,
+                  "mutability": "mutable",
+                  "name": "key",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "967:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1910,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "967:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1913,
+                  "mutability": "mutable",
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "985:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 1912,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "985:5:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1915,
+                  "mutability": "mutable",
+                  "name": "branchMask",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1005:18:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1914,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1005:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1918,
+                  "mutability": "mutable",
+                  "name": "siblings",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1025:25:6",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1916,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1025:7:6",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 1917,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1025:9:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "966:85:6"
+            },
+            "returnParameters": {
+              "id": 1922,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1921,
+                  "mutability": "mutable",
+                  "name": "rootHash",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1923,
+                  "src": "1080:16:6",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 1920,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1080:7:6",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1079:18:6"
+            },
+            "scope": 1924,
+            "src": "943:155:6",
+            "stateMutability": "pure",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1925,
+        "src": "244:859:6"
+      }
+    ],
+    "src": "35:1068:6"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.1+commit.df193b15.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-07-13T08:50:07.342Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getImpliedRoot(bytes,bytes,uint256,bytes32[])": {
+        "returns": {
+          "rootHash": "The calculated hash"
+        }
+      },
+      "getNode(bytes32)": {
+        "params": {
+          "hash": "The `keccak256` hash of the actual key"
+        },
+        "returns": {
+          "n": "`Data.Node` for key `hash`"
+        }
+      },
+      "getProof(bytes)": {
+        "returns": {
+          "_siblings": "Hashes of sibling edges",
+          "branchMask": "Bitmask with high bits at the positions in the `key` where we have branch nodes (bit in key denotes direction)"
+        }
+      },
+      "getRootEdge()": {
+        "returns": {
+          "e": "The root `Data.Edge`"
+        }
+      },
+      "getRootHash()": {
+        "details": "This value is a keccak256 hash of the rootEdge: `keccak256(Edge.node, Edge.label.length, Edge.label.data)`",
+        "returns": {
+          "rootHash": "The `bytes32` hash value"
+        }
+      }
+    },
+    "title": "Interface for Patricia trees",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getImpliedRoot(bytes,bytes,uint256,bytes32[])": {
+        "notice": "Calculates and returns a root hash for the `key`, `value`, `branchMask` and `siblings`"
+      },
+      "getNode(bytes32)": {
+        "notice": "Get the node with the given key"
+      },
+      "getProof(bytes)": {
+        "notice": "Returns the Merkle-proof for the given `key`"
+      },
+      "getRootEdge()": {
+        "notice": "Get the root edge"
+      },
+      "getRootHash()": {
+        "notice": "Get the root hash"
+      },
+      "insert(bytes,bytes)": {
+        "notice": "Insert the `key`/`value`in the appropriate place in the tree"
+      }
+    },
+    "notice": "More info at: https://github.com/chriseth/patricia-trie",
+    "version": 1
+  }
+}
